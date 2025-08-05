@@ -15,7 +15,10 @@
 
 
     
-# 2. Configure the sec groups (allow TCP and ICMP traffic), download the pem file
+# 2. Configure the sec groups (allow TCP and ICMP traffic), 
+
+Make sure to download the pem file
+
 # 3. Change to root
 
 `sudo su`
