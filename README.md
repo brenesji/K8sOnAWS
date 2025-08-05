@@ -1,7 +1,7 @@
 # K8sOnAWS
 # Deploy a 3 nodes K8s Cluster on AWS
 
-1. Create the VMs in AWS (**t2.medium**)
+1. Create the VMs in AWS
 
 
     ```bash
