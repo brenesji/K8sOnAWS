@@ -47,7 +47,7 @@
 # 9. Install ***kubeadm*** on all 3 nodes
 
     
-    ```bash
+
     cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
     [kubernetes]
     name=Kubernetes
@@ -57,7 +57,7 @@
     gpgkey=https://pkgs.k8s.io/core:/stable:/v1.33/rpm/repodata/repomd.xml.key
     exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
     EOF
-    ```
+
     
 # 10. List repos again and see K8s
 
@@ -79,11 +79,11 @@
 # 14. Join worker nodes to the cluster
 
     
-    ```bash
+
     kubeadm join 172.30.2.129:6443 --token 6h9hp1.6pfk4ig45iaiesf2 \
             --discovery-token-ca-cert-hash sha256:13754ad087441eb39c2e71754a3153942d9c4ac70f4d0cb4b2cbb843f000896f
            
-    ```
+
     
 # 15. I need to allow TCP traffic in the Security Group to be able to add the nodes to the cluster (all traffic was allowed for this lab only, please adhere to your company policy)
 
@@ -92,11 +92,11 @@
 # 16. Install ***calico*** on master node
 
     
-    ```bash
+
     curl https://raw.githubusercontent.com/projectcalico/calico/v3.30.2/manifests/calico.yaml -O
     
     kubectl apply -f calico.yaml
-    ```
+
     
 # 17. Check NS in the cluster
 
@@ -168,10 +168,10 @@ Sample service.yaml file
 # 21. Validate on which node and port the app is running
     
     
-    ```bash
+
     kubectl get pods -n dev -o wide
     kubectl get sv -n dev
-    ```
+
     
 
     
