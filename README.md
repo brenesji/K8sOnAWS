@@ -3,7 +3,7 @@
 
 1. Create the VMs in AWS (**t2.medium**)
 
-**OS Image**: Amazon Linux  6.12 64 bit
+<br> **OS Image**: Amazon Linux  6.12 64 bit </br>
 **Instance Type**: t2.medium
 **KeyPar**: (create new one)
 **Nw Settings**: Create New Security Group 
