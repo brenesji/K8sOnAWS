@@ -85,9 +85,9 @@
            
 
     
-# 15. I need to allow TCP traffic in the Security Group to be able to add the nodes to the cluster (all traffic was allowed for this lab only, please adhere to your company policy)
+# 15. Allow TCP traffic in the Security Group to add the nodes to the cluster
 
-    
+     (all traffic was allowed for this lab only, please adhere to your company policy)
     
 # 16. Install ***calico*** on master node
 
