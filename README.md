@@ -84,7 +84,6 @@
 15. I need to allow  TCP traffic to be able to add the nodes to the cluster (all traffic was allowed for this lab only, please adhere to your company policy)
 
     
-    ![Screenshot 2025-07-31 at 6.34.08 PM.png](attachment:8cea25fd-7e03-4ba8-8a32-ab0a1f1c6109:Screenshot_2025-07-31_at_6.34.08_PM.png)
     
 16. Install ***calico*** on master node
 
@@ -166,7 +165,7 @@
     
     1. Check the nodes
     
-    ![Screenshot 2025-08-02 at 1.49.20 PM.png](attachment:b0f0ca25-9e28-4151-bc48-27fc0b00f3a1:Screenshot_2025-08-02_at_1.49.20_PM.png)
+
     
 22. Test the Application
 
