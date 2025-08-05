@@ -3,12 +3,12 @@
 
 1. Create the VMs in AWS (**t2.medium**)
 
-<br> **OS Image**: Amazon Linux  6.12 64 bit </br>
-<br>**Instance Type**: t2.medium</br>
-<br>**KeyPar**: (create new one)</br>
-<br>**Nw Settings**: Create New Security Group </br>
-<br>**Storage**: 8 gb gp3</br>
-<br>**Number of Instances**: 3</br>
+OS Image: Amazon Linux  6.12 64 bit
+Instance Type: t2.medium
+KeyPar: (create new one)
+Nw Settings: Create New Security Group 
+Storage: 8 gb gp3
+Number of Instances: 3
 
     
 2. Configure the sec groups (allow TCP and ICMP traffic), download the pem file
