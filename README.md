@@ -3,12 +3,14 @@
 
 1. Create the VMs in AWS (**t2.medium**)
 
-OS Image: Amazon Linux  6.12 64 bit
-Instance Type: t2.medium
-KeyPar: (create new one)
-Nw Settings: Create New Security Group 
-Storage: 8 gb gp3
-Number of Instances: 3
+    apiVersion: apps/v1
+    OS Image: Amazon Linux  6.12 64 bit
+    Instance Type: t2.medium
+    KeyPar: (create new one)
+    Nw Settings: Create New Security Group 
+    Storage: 8 gb gp3
+    Number of Instances: 3
+
 
     
 2. Configure the sec groups (allow TCP and ICMP traffic), download the pem file
@@ -138,7 +140,6 @@ Number of Instances: 3
 `kubectl apply -f HWSev.yaml -n dev`
 
     
-    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -160,7 +161,6 @@ Number of Instances: 3
             image: nginxdemos/hello:plain-text # A simple Nginx image serving "Hello World!"
             ports:
             - containerPort: 80 # Port the application listens on inside the container
-    ```
     
 21. Create the service
     
