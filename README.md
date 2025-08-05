@@ -1,7 +1,7 @@
 # K8sOnAWS
 # Deploy a 3 nodes K8s Cluster on AWS
 
-1. Create the VMs in AWS
+# 1. Create the VMs in AWS
 
 
     ```bash
@@ -15,28 +15,28 @@
     ```
 
     
-2. Configure the sec groups (allow TCP and ICMP traffic), download the pem file
-3. Change to root
+# 2. Configure the sec groups (allow TCP and ICMP traffic), download the pem file
+# 3. Change to root
 
 `sudo su`
 
-4. List Repos to verify K8s is not installed 
+# 4. List Repos to verify K8s is not installed 
 
 `yum repolist`
 
-5. Install docker as a container runtime
+# 5. Install docker as a container runtime
 
 `yum install docker -y`
 
-6. Start Docker as a daemon
+# 6. Start Docker as a daemon
 
 `systemctl start docker`
 
-7. Check docker service
+# 7. Check docker service
 
 `docker ps`
 
-8. Prepare for ***kubeadm*** installation
+# 8. Prepare for ***kubeadm*** installation
 
     
 
@@ -44,7 +44,7 @@
     sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
     
-9. Install ***kubeadm*** on all 3 nodes
+# 9. Install ***kubeadm*** on all 3 nodes
 
     
     ```bash
@@ -59,24 +59,24 @@
     EOF
     ```
     
-10. List repos again and see K8s
+# 10. List repos again and see K8s
 
 `yum repolist`
 
-11. Install ***kubectl*** and enable it (all 3 nodes)
+# 11. Install ***kubectl*** and enable it (all 3 nodes)
 
 `sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes`
 `sudo systemctl enable --now kubelet`
 
-12. Init ***kubeadm*** on **master** node 
+# 12. Init ***kubeadm*** on **master** node 
 
 `kubeadm init`
 
-13. Export the ***kubeconfig*** file
+# 13. Export the ***kubeconfig*** file
 
 `export KUBECONFIG=/etc/kubernetes/admin.conf`
 
-14. Join worker nodes to the cluster
+# 14. Join worker nodes to the cluster
 
     
     ```bash
@@ -85,11 +85,11 @@
            
     ```
     
-15. I need to allow  TCP traffic to be able to add the nodes to the cluster (all traffic was allowed for this lab only, please adhere to your company policy)
+# 15. I need to allow TCP traffic in the Security Group to be able to add the nodes to the cluster (all traffic was allowed for this lab only, please adhere to your company policy)
 
     
     
-16. Install ***calico*** on master node
+# 16. Install ***calico*** on master node
 
     
     ```bash
@@ -98,20 +98,20 @@
     kubectl apply -f calico.yaml
     ```
     
-17. Check NS in the cluster
+# 17. Check NS in the cluster
 
 `kubectl get ns`
 
-18. Create a new NS
+# 18. Create a new NS
 
 `kubectl create ns dev`
 
-19. Create the deployment
+# 19. Create the deployment
 
 `kubectl apply -f HWDep.yaml -n dev`
 
 
-
+Sample deployment.yaml file:
 
     apiVersion: apps/v1
     kind: Deployment
@@ -137,10 +137,11 @@
            
 
     
-20. Create the service
+# 20. Create the service
 
 `kubectl apply -f HWSev.yaml -n dev`
 
+Sample service.yaml file
     
     apiVersion: apps/v1
     kind: Deployment
@@ -164,10 +165,13 @@
             ports:
             - containerPort: 80 # Port the application listens on inside the container
     
-21. Create the service
+# 21. Validate on which node and port the app is running
     
     
-    1. Check the nodes
+    ```bash
+    kubectl get pods -n dev -o wide
+    kubectl get sv -n dev
+    ```
     
 
     
