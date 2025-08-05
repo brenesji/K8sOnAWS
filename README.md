@@ -106,6 +106,33 @@ Number of Instances: 3
 
 `kubectl apply -f HWDep.yaml -n dev`
 
+
+
+
+        ```bash
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: hello-world-deployment
+      labels:
+        app: hello-world
+    spec:
+      replicas: 2 # Number of desired replicas of your application
+      selector:
+        matchLabels:
+          app: hello-world
+      template:
+        metadata:
+          labels:
+            app: hello-world
+        spec:
+          containers:
+          - name: hello-world-container
+            image: nginxdemos/hello:plain-text # A simple Nginx image serving "Hello World!"
+            ports:
+            - containerPort: 80 # Port the application listens on inside the container
+           
+    ```
     
     ```yaml
     apiVersion: apps/v1
