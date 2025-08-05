@@ -11,6 +11,15 @@
     Storage: 8 gb gp3
     Number of Instances: 3
 
+    ```bash
+    apiVersion: apps/v1
+    OS Image: Amazon Linux  6.12 64 bit
+    Instance Type: t2.medium
+    KeyPar: (create new one)
+    Nw Settings: Create New Security Group 
+    Storage: 8 gb gp3
+    Number of Instances: 3
+    ```
 
     
 2. Configure the sec groups (allow TCP and ICMP traffic), download the pem file
