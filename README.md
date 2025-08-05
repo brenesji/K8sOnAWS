@@ -11,20 +11,11 @@
 **Number of Instances**: 3
 
     
-    ![Screenshot 2025-08-02 at 1.25.00 PM.png](attachment:161830cb-5125-4458-95c6-fdaa88e672a1:Screenshot_2025-08-02_at_1.25.00_PM.png)
-    
-    ![Screenshot 2025-08-02 at 1.25.40 PM.png](attachment:62cdc065-1827-464f-9636-07ef4d456e98:Screenshot_2025-08-02_at_1.25.40_PM.png)
-    
-    ![Screenshot 2025-08-02 at 1.25.56 PM.png](attachment:12892890-a47a-4221-bfce-d89c635fc7d0:Screenshot_2025-08-02_at_1.25.56_PM.png)
-    
-    ![Screenshot 2025-08-02 at 1.26.10 PM.png](attachment:e9dcd8ce-92f6-4799-9d50-5c05cce8c38e:Screenshot_2025-08-02_at_1.26.10_PM.png)
-    
-    ![Screenshot 2025-08-02 at 1.26.21 PM.png](attachment:e47f97a1-6fb7-46cb-b677-fa9fd25d6827:Screenshot_2025-08-02_at_1.26.21_PM.png)
-    
 2. Configure the sec groups (allow TCP and ICMP traffic), download the pem file
 3. Change to root
 
 `sudo su`
+
 4. List Repos to verify K8s is not installed 
 
 `yum repolist`
