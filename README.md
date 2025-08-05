@@ -35,10 +35,10 @@ Number of Instances: 3
 8. Prepare for ***kubeadm*** installation
 
     
-    ```bash
+
     sudo setenforce 0
     sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-    ```
+
     
 9. Install ***kubeadm*** on all 3 nodes
 
